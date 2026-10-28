@@ -1,0 +1,94 @@
+/* auth.css - Estilos exclusivos para Login y Registro */
+
+:root {
+  --verde-oscuro: #1A531A;
+  --verde-oliva: #6B8E23; /* El verde del botón de tu imagen */
+  --fondo-pagina: #B4C69F; /* El fondo verde suave */
+  --blanco: #FFFFFF;
+}
+
+body.auth-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo-pagina);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* La caja contenedora blanca */
+.auth-container {
+  background-color: var(--blanco);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.auth-container h1 {
+  color: var(--verde-oscuro);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.auth-container p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* Inputs redondeados */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--verde-oliva);
+}
+
+/* Botón estilo "Enviar mensaje" */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--verde-oliva);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: var(--verde-oscuro);
+}
+
+.auth-footer {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.auth-footer a {
+  color: var(--verde-oliva);
+  text-decoration: none;
+  font-weight: bold;
+}

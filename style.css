@@ -1,0 +1,586 @@
+/* 1. Variables y Reset - Paleta de colores basada en el cartel */
+:root {
+  --verde-oscuro: #1A531A; /* Texto principal y acentos fuertes */
+  --verde-medio: #2E8B57;  /* Botones y títulos secundarios */
+  --verde-claro: #90EE90;  /* Detalles del logo y hover */
+  --fondo-crema: #F0FFF0; /* Fondo texturizado suave (Honeydew) */
+  --blanco: #FFFFFF;
+  --gris-oscuro: #333333;
+  --sombra: 0 4px 6px rgba(0,0,0,0.1);
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--fondo-crema);
+  color: var(--gris-oscuro);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 2. Estandarización de Imágenes */
+/* Todas las imágenes de contenido tendrán un tamaño fijo y se adaptarán */
+.img-estandar {
+  width: 100%;
+  max-width: 300px; /* Tamaño máximo horizontal */
+  height: 200px;    /* Tamaño fijo vertical */
+  object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+  border-radius: 8px;
+  border: 2px solid var(--verde-oscuro);
+}
+
+/* 3. Encabezado y Navegación */
+header {
+  background-color: var(--blanco);
+  padding: 1rem 2rem;
+  box-shadow: var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 50px; /* Tamaño fijo del logo en nav */
+  width: auto;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--verde-oscuro);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--gris-oscuro);
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--verde-medio);
+  border-bottom: 2px solid var(--verde-medio);
+}
+
+.btn-login {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco) !important;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: var(--verde-medio);
+}
+
+/* 4. Estilos Generales de Sección */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h1, h2, h3 {
+  color: var(--verde-oscuro);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; text-align: center; }
+h2 { font-size: 2rem; border-bottom: 2px solid var(--verde-claro); padding-bottom: 0.5rem; }
+
+/* Botones Estándar */
+.btn-primario {
+  display: inline-block;
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primario:hover {
+  background-color: var(--verde-oscuro);
+}
+
+/* 5. Index: Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo {
+  max-width: 250px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 { margin-bottom: 0.5rem; }
+.slogan {
+  font-size: 1.2rem;
+  color: var(--verde-medio);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* 6. Index: Grid de Propuesta de Valor */
+.grid-propuesta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  text-align: center;
+  border-top: 4px solid var(--verde-medio);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--verde-medio);
+}
+
+/* 7. Estilos Específicos para otras secciones (Estructura) */
+
+/* Puntos de Recolección */
+.mapa-enorme {
+  width: 100%;
+  height: 500px;
+  background-color: #e0e0e0; /* Placeholder para el mapa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid var(--gris-oscuro);
+  margin-bottom: 2rem;
+}
+
+.info-puntos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.punto-card {
+  background: var(--blanco);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--verde-oscuro);
+}
+
+/* Aprender a Separar */
+.guia-residuos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.residuo-articulo {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Agendar Recolección (Formulario) */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Recompensas */
+.recompensas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.recompensa-card {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.puntos-costo {
+  font-size: 1.2rem;
+  color: var(--verde-medio);
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.user-points-panel {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Perfil */
+.perfil-container {
+  text-align: center;
+  background: var(--blanco);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.perfil-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--verde-claro);
+  margin-bottom: 1rem;
+}
+
+/* 8. Footer */
+footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+}
+
+/* 9. Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+  .residuo-articulo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* --- RESET ESPECÍFICO PARA PÁGINAS DE AUTENTICACIÓN --- */
+.auth-page-container, .auth-background {
+  background-color: #B4C69F !important; /* Fondo oliva del cartel */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* --- TARJETA BLANCA (EL CONTENEDOR) --- */
+.auth-card {
+  background-color: #FFFFFF !important;
+  padding: 40px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.auth-card h1, .auth-card h2 {
+  color: #1A531A !important; /* verde-oscuro */
+  font-family: 'Segoe UI', sans-serif !important;
+  margin-bottom: 10px !important;
+  font-size: 1.8rem !important;
+}
+
+.auth-card p {
+  color: #666 !important;
+  margin-bottom: 25px !important;
+  font-size: 0.95rem !important;
+}
+
+/* --- ESTILO DE LOS INPUTS --- */
+.auth-input-group {
+  margin-bottom: 15px !important;
+}
+
+.auth-input-group input {
+  width: 100% !important;
+  padding: 12px 15px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 10px !important; /* Bordes circulares */
+  font-size: 1rem !important;
+  box-sizing: border-box !important; /* Evita que el input se salga de la caja */
+}
+
+/* --- BOTÓN ESTILO "ENVIAR MENSAJE" DE TU IMAGEN --- */
+.btn-auth, .btn-capsula {
+  width: 100% !important;
+  padding: 12px !important;
+  background-color: #6B8E23 !important; /* Verde pasto/oliva */
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  margin-top: 10px !important;
+  text-transform: none !important;
+}
+
+.btn-auth:hover {
+  background-color: #1A531A !important;
+}
+
+.card.highlight {
+    border: 2px solid #2e7d32; /* Un borde verde para resaltar */
+    transition: transform 0.3s ease;
+}
+
+.card.highlight:hover {
+    transform: translateY(-10px); /* Efecto de levitación al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-secundario {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: transparent;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-secundario:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* Estilos para el Index Personalizado */
+.hero-dashboard {
+    padding: 2rem 0;
+}
+
+.welcome-banner {
+    background-color: var(--verde-oscuro);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--sombra);
+}
+
+.welcome-banner h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    border-bottom: 5px solid var(--verde-claro);
+    transition: 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-card h3 {
+    margin-top: 1rem;
+}
+
+.action-card .btn-primario {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* --- DASHBOARD MODERNO --- */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.welcome-header h1 {
+    font-size: 2.5rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+/* El cuadro de puntos central */
+.points-badge {
+    background: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 15px;
+    padding: 1.5rem 3rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.points-label, .points-unit {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.points-value {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--verde-medio);
+    line-height: 1;
+    margin: 5px 0;
+}
+
+/* Grid de Acciones */
+.main-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.action-card-modern {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.action-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card-icon-circle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--verde-oscuro);
+}
+
+.card-body p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    min-height: 50px;
+}
+
+/* Botones estilo píldora */
+.btn-action-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--verde-medio);
+    color: var(--verde-medio);
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-action-outline:hover {
+    background: var(--verde-medio);
+    color: white;
+}
